@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+  <div id="piechart" align="center"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['P', 8],
+  ['UPL', 2],
+  ['PL', 4],
+  ['SL', 2],
+  ['WFH', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Attendance', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+<h2>My Attendance</h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>01 JAN 2019</td>
+    <td>Tuesday</td>
+    <td>P</td>
+  </tr>
+  <tr>
+    <td>02 JAN 2019</td>
+    <td>Wednesday</td>
+    <td>P</td>
+  </tr>
+  <tr>
+    <td>03 JAN 2019</td>
+    <td>Thursday</td>
+    <td>P</td>
+  </tr>
+  <tr>
+    <td>04 JAN 2019</td>
+    <td>Friday</td>
+    <td>PL</td>
+  </tr>
+  <tr>
+    <td>07 JAN 2019</td>
+    <td>Monday</td>
+    <td>P</td>
+  </tr>
+  <tr>
+    <td>08 JAN 2019</td>
+    <td>Tuesday</td>
+    <td>SL</td> 
+  </tr>
+</table>
+
+</body>
+</html>

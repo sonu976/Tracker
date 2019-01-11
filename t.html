@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body> 
+<div id="piechart" align="center"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['P', 8],
+  ['UPL', 2],
+  ['PL', 4],
+  ['SL', 2],
+  ['WFH', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Hours', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+
+<h2>My Hours</h2>
+
+<table>
+  <tr>
+    <th>Check-In Time</th>
+    <th>Check-Out Time</th>
+    <th>Break</th>
+  </tr>
+  <tr>
+    <td>04:00 PM</td>
+    <td>02:00 AM</td>
+    <td>02:05 hrs</td>
+  </tr>
+  <tr>
+    <td>04:06 PM</td>
+    <td>02:00 AM</td>
+    <td>02:22 hrs</td>
+  </tr>
+  <tr>
+    <td>04:09 PM</td>
+    <td>02:00 AM</td>
+    <td>02:30 hrs</td>
+  </tr>
+  <tr>
+    <td>04:20 PM</td>
+    <td>02:04 AM</td>
+    <td>02:52 hrs</td>
+  </tr>
+  <tr>
+    <td>04:34 PM</td>
+    <td>02:02 AM</td>
+    <td>02:22 hrs</td>
+  </tr>
+  <tr>
+    <td>04:03 PM</td>
+    <td>02:05 AM</td>
+    <td>02:42 hrs</td> 
+  </tr>
+</table>
+<video width="400" controls>
+  <source src="vid.mp4" type="video/mp4">
+ <source src="mov_bbb.ogg" type="video/ogg">
+  
+  Your browser does not support HTML5 video.
+</video>
+
+
+</body> 
+</html>
